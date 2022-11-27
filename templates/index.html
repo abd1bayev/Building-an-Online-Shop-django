@@ -73,72 +73,37 @@ https://www.tooplate.com/view/2095-level
                         <div class="row">
                             <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
                                 <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
+                                    {% csrf_token %}
+                                    {{ form }}
                                     <div class="form-row tm-search-form-row">
                                         <div class="form-group tm-form-element tm-form-element-100">
                                             <i class="fa fa-map-marker fa-2x tm-form-element-icon"></i>
-                                            <input name="city" type="text" class="form-control" id="inputCity" placeholder="Type your destination...">
+                                            <input name="city" type="text" class="form-control" id="inputCity" value="{{ lactation }}" placeholder="Type your destination...">
                                         </div>
                                         <div class="form-group tm-form-element tm-form-element-50">
                                             <i class="fa fa-calendar fa-2x tm-form-element-icon"></i>
-                                            <input name="check-in" type="text" class="form-control" id="inputCheckIn" placeholder="Check In">
+                                            <input name="check-in" type="text" class="form-control" id="inputCheckIn" value="start_time" placeholder="Check In">
                                         </div>
                                         <div class="form-group tm-form-element tm-form-element-50">
                                             <i class="fa fa-calendar fa-2x tm-form-element-icon"></i>
-                                            <input name="check-out" type="text" class="form-control" id="inputCheckOut" placeholder="Check Out">
+                                            <input name="check-out" type="text" class="form-control" id="inputCheckOut" value="end_time" placeholder="Check Out">
                                         </div>
                                     </div>
                                     <div class="form-row tm-search-form-row">
-                                        <div class="form-group tm-form-element tm-form-element-2">                                            
-                                            <select name="adult" class="form-control tm-select" id="adult">
-                                                <option value="">Adult</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                            </select>
+                                        <div class="form-group tm-form-element tm-form-element-2">
                                             <i class="fa fa-2x fa-user tm-form-element-icon"></i>
+                                            <input name="adult" class="form-control tm-select" value="{{ adult }}" placeholder="adult" id="adult">
                                         </div>
-                                        <div class="form-group tm-form-element tm-form-element-2">                                            
-                                            <select name="children" class="form-control tm-select" id="children">
-                                                <option value="">Children</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                            </select>
+                                        <div class="form-group tm-form-element tm-form-element-2">
                                             <i class="fa fa-user tm-form-element-icon tm-form-element-icon-small"></i>
+                                            <input name="children" class="form-control tm-select" value="{{ children }}" placeholder="children" id="children">
                                         </div>
                                         <div class="form-group tm-form-element tm-form-element-2">
-                                            <select name="room" class="form-control tm-select" id="room">
-                                                <option value="">Room</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                            </select>
                                             <i class="fa fa-2x fa-bed tm-form-element-icon"></i>
+                                            <input name="room" class="form-control tm-select" value="{{ room }}" placeholder="room" id="room">
                                         </div>
                                         <div class="form-group tm-form-element tm-form-element-2">
-                                            <button type="submit" class="btn btn-primary tm-btn-search">Check Availability</button>
+                                            <input type="submit" class="submit_btn btn label-success" value="Update" />
                                         </div>
                                       </div>
                                       <div class="form-row clearfix pl-2 pr-2 tm-fx-col-xs">
@@ -156,7 +121,7 @@ https://www.tooplate.com/view/2095-level
                 <div class="container">
                     <div class="row">
                         <div class="col text-center">
-                            <h2 class="tm-section-title">We are here to help you?</h2>
+                            <h2 class="tm-section-title">How can we help you?</h2>
                             <p class="tm-color-white tm-section-subtitle">Subscribe to get our newsletters</p>
                             <a href="#" class="tm-color-white tm-btn-white-bordered">Subscribe Newletters</a>
                         </div>                
@@ -172,20 +137,20 @@ https://www.tooplate.com/view/2095-level
                     <div class="row text-center">
                         <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">                            
                             <i class="fa tm-fa-6x fa-legal tm-color-primary tm-margin-b-20"></i>
-                            <h3 class="tm-color-primary tm-article-title-1">Level HTML Template by Tooplate website</h3>
-                            <p>You are allowed to download, edit and use this template for your business or client websites.</p>
+                            <h3 class="tm-color-primary tm-article-title-1">Guaranteeing a great environment for you.</h3>
+                            <p>It is a great service for you to adapt to any conditions and wonderful environment.</p>
                             <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
                         </article>
                         <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">                            
                             <i class="fa tm-fa-6x fa-plane tm-color-primary tm-margin-b-20"></i>
-                            <h3 class="tm-color-primary tm-article-title-1">Original Website Template Producer</h3>
-                            <p>You are NOT allowed to re-distribute the downloadable template ZIP file on any website.</p>
+                            <h3 class="tm-color-primary tm-article-title-1">Book the place you want in advance.</h3>
+                            <p>It is a great service for you to adapt to any conditions and wonderful environment.</p>
                             <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>                            
                         </article>
                         <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">                           
                             <i class="fa tm-fa-6x fa-life-saver tm-color-primary tm-margin-b-20"></i>
                             <h3 class="tm-color-primary tm-article-title-1">Contact us if you have any question</h3>
-                            <p>If you see this template being distributed on any other site, that is an illegal copy.</p>
+                            <p>It is a great service for you to adapt to any conditions and wonderful environment.</p>
                             <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>                           
                         </article>
                     </div>        
@@ -368,12 +333,6 @@ https://www.tooplate.com/view/2095-level
             
             <footer class="tm-bg-dark-blue">
                 <div class="container">
-                    <div class="row">
-                        <p class="col-sm-12 text-center tm-font-light tm-color-white p-4 tm-margin-b-0">
-                        Copyright &copy; <span class="tm-current-year">2018</span> Your Company
-                        
-                        - Design: <a rel="nofollow" href="https://www.tooplate.com" class="tm-color-primary tm-font-normal" target="_parent">Tooplate</a></p>        
-                    </div>
                 </div>                
             </footer>
         </div>
