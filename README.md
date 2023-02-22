@@ -1,6 +1,7 @@
 # Sharing-Content-on-Website
 
 <h3>This chapter will cover the following points:</h3>
+
 - Creating many-to-many relationships
 - Customizing behavior for forms
 - Using JavaScript with Django
@@ -10,6 +11,7 @@
 - Building infinite scroll pagination
 
 <h3>Creating an image bookmarking website</h3>
+
 We will now learn how to allow users to bookmark images that they find on other websites and share them on our site. To build this functionality, we will need the following elements:
 
 1. A data model to store images and related information
