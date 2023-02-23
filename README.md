@@ -18,3 +18,21 @@ Let’s start with a new Django project to build an online shop. Your users will
 - Building a shopping cart system using Django sessions to allow users to keep selected products while they browse the site
 - Creating the form and functionality to place orders on the site
 - Sending an asynchronous email confirmation to users when they place an order
+
+
+<h2>let's start the project</h2>
+
+- pip install -r requirements.txt
+- python manage.py migrate
+- python manage.py runserver
+- docker pull rabbitmq #new terminal
+- https://www.rabbitmq.com/download.html
+
+result : http://127.0.0.1:15672/
+<img width="800" src="img_readme/Rabbit.png">
+
+- celery -A myshop worker -l info #new terminal
+- celery -A myshop flower
+
+result : http://localhost:5555/dashboard
+<img width="800" src="img_readme/Flowet.png">
